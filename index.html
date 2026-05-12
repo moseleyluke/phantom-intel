@@ -17,7 +17,6 @@
 html,body{height:100%;overflow:hidden}
 body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe UI',system-ui,sans-serif;font-size:13px}
 
-/* TOPBAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;background:var(--bg2);border-bottom:1px solid var(--b1);position:sticky;top:0;z-index:100}
 .logo{font-size:15px;font-weight:600;letter-spacing:1px;color:var(--text)}
 .logo span{color:var(--blue)}
@@ -30,7 +29,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .rfbtn{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--b2);border-radius:6px;padding:5px 14px;color:var(--text2);cursor:pointer;font-size:12px;font-family:inherit;transition:all .15s}
 .rfbtn:hover{border-color:var(--blue);color:var(--blue)}
 
-/* LAYOUT */
 .main{display:grid;grid-template-columns:1fr 1fr 300px;height:calc(100vh - 48px);overflow:hidden}
 .col{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
 .col.mid{border-left:1px solid var(--b1)}
@@ -53,7 +51,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .bp-a{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.2);color:var(--amber)}
 .bp-n{background:rgba(255,255,255,.03);border-color:var(--b2);color:var(--text3)}
 
-/* SECTION */
 .sec{background:var(--bg2);border:1px solid var(--b1);border-radius:10px;padding:14px 16px}
 .sec-lbl{font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
 .sec-btn{font-size:10px;background:var(--bg3);border:1px solid var(--b1);border-radius:4px;padding:2px 10px;color:var(--text3);cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none;transition:all .15s}
@@ -82,24 +79,17 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .tc-price{font-size:24px;font-weight:600;color:var(--text);margin-bottom:3px;letter-spacing:-.5px}
 .tc-chg{font-size:12px;margin-bottom:10px}
 .up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--text3)}
-
-/* EMA DOTS */
 .tc-ema{display:flex;align-items:center;gap:6px;margin-bottom:12px}
 .ema-stack{display:flex;gap:3px}
 .ed{width:10px;height:10px;border-radius:50%}
 .ed.on{background:var(--green)}.ed.off{background:rgba(239,68,68,.4)}.ed.unk{background:var(--text4)}
 .ema-vals{font-size:9px;color:var(--text4)}
 
-/* TREND ARROWS — BIGGER, HORIZONTAL, M→W→D→1H */
-.tc-trends{display:flex;gap:5px;align-items:center}
+/* TREND ARROWS — large, M→W→D→1H */
+.tc-trends{display:flex;gap:5px}
 .tcell{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
 .ttf{font-size:9px;color:var(--text3);letter-spacing:.5px;text-transform:uppercase;font-weight:500}
-.tarr{
-  width:100%;height:44px;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;font-weight:700;
-  transition:background .2s;
-}
+.tarr{width:100%;height:44px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700}
 .tbull{background:rgba(34,197,94,.14);color:var(--green);border:1px solid rgba(34,197,94,.25)}
 .tbear{background:rgba(239,68,68,.14);color:var(--red);border:1px solid rgba(239,68,68,.25)}
 .tneut{background:rgba(255,255,255,.04);color:var(--text4);border:1px solid var(--b1)}
@@ -113,24 +103,33 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .lr-inp{background:transparent;border:none;border-bottom:1px solid var(--b2);color:var(--text);font-family:inherit;font-size:11px;font-weight:500;width:100px;text-align:right;padding:1px 0}
 .lr-inp:focus{outline:none;border-bottom-color:var(--blue)}
 
-/* MOMENTUM SCANNER — LIVE */
-.scan-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.scan-lbl{font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase}
-.scan-live{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--green)}
-.scan-pulse{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.scan-rows{display:flex;flex-direction:column;gap:4px}
-.scan-row{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg3);border-radius:6px;border-left:2px solid transparent;transition:border-color .3s}
-.scan-row.mup{border-left-color:var(--green)}
-.scan-row.mdown{border-left-color:var(--red)}
-.scan-row.fire{background:rgba(34,197,94,.06);border-color:var(--green)}
-.scan-row.crash{background:rgba(239,68,68,.06);border-color:var(--red)}
-.scan-sym{font-size:13px;font-weight:600;color:var(--text);width:50px;flex-shrink:0}
-.scan-price{font-size:12px;color:var(--text2);width:65px;flex-shrink:0}
-.scan-name{font-size:10px;color:var(--text3);flex:1}
-.scan-pct{font-size:13px;font-weight:700;text-align:right;min-width:60px}
-.scan-arrow{font-size:11px;margin-left:2px}
-.scan-badge{font-size:9px;padding:1px 6px;border-radius:3px;font-weight:600;border:1px solid;margin-left:4px}
+/* GAP SCANNER */
+.gap-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.gap-lbl{font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase}
+.gap-updated{font-size:9px;color:var(--text4)}
+.gap-rows{display:flex;flex-direction:column;gap:6px}
+.gap-row{border-radius:8px;padding:10px 14px;border:1px solid var(--b1);background:var(--bg3);border-left:3px solid transparent}
+.gap-row.breakaway-up{border-left-color:var(--green);background:rgba(34,197,94,.04)}
+.gap-row.breakaway-dn{border-left-color:var(--red);background:rgba(239,68,68,.04)}
+.gap-row.runaway-up{border-left-color:var(--blue)}
+.gap-row.runaway-dn{border-left-color:var(--blue)}
+.gap-row.exhaustion{border-left-color:var(--amber);background:rgba(245,158,11,.04)}
+.gap-row.common{border-left-color:var(--text4)}
+.gap-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.gap-sym{font-size:14px;font-weight:700;color:var(--text);width:52px;flex-shrink:0}
+.gap-price{font-size:13px;color:var(--text2);width:65px;flex-shrink:0}
+.gap-pct{font-size:15px;font-weight:700;flex:1}
+.gap-type-badge{font-size:10px;padding:3px 10px;border-radius:4px;font-weight:700;border:1px solid;white-space:nowrap}
+.gt-breakaway-up{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)}
+.gt-breakaway-dn{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:var(--red)}
+.gt-runaway{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:var(--blue)}
+.gt-exhaustion{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);color:var(--amber)}
+.gt-common{background:rgba(255,255,255,.04);border-color:var(--b2);color:var(--text3)}
+.gap-verdict{font-size:11px;color:var(--text2);line-height:1.5}
+.gap-verdict b{color:var(--text)}
+.gap-stats{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.gap-stat{font-size:10px;color:var(--text3);background:var(--bg2);padding:2px 8px;border-radius:4px;border:1px solid var(--b1)}
+.gap-no-sig{padding:16px;text-align:center;color:var(--text4);font-size:11px;border:1px dashed var(--b2);border-radius:8px}
 
 /* PATTERNS */
 .pat-rows{display:flex;flex-direction:column;gap:4px}
@@ -191,7 +190,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .je-txt{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.5}
 .savebtn{width:100%;padding:9px;background:var(--blue);border:none;border-radius:7px;color:#fff;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;margin-top:7px;letter-spacing:.5px;transition:opacity .15s}
 .savebtn:hover{opacity:.85}
-
 .lrow{padding:20px;text-align:center;color:var(--text4);font-size:11px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .spin{animation:spin 1s linear infinite;display:inline-block}
@@ -219,7 +217,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 
 <div class="main">
 
-  <!-- LEFT: Banner + Ticker cards -->
   <div class="col">
     <div id="condBanner" class="banner amber">
       <div class="ban-top">
@@ -232,18 +229,17 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
     <div id="tickerCards"><div class="lrow">Loading tickers...</div></div>
   </div>
 
-  <!-- MID: Live scanner + Patterns + Earnings -->
   <div class="col mid">
     <div class="sec">
-      <div class="scan-header">
-        <div class="scan-lbl">Momentum scanner</div>
-        <div class="scan-live"><div class="scan-pulse"></div>Live — updates every 30s</div>
+      <div class="gap-header">
+        <div class="gap-lbl">Gap scanner</div>
+        <div class="gap-updated" id="gapUpdated">--</div>
       </div>
-      <div class="scan-rows" id="scanRows"><div class="lrow">Loading...</div></div>
+      <div class="gap-rows" id="gapRows"><div class="lrow">Scanning gaps...</div></div>
     </div>
     <div class="sec">
       <div class="sec-lbl">Pattern scanner <span style="font-size:9px;color:var(--text4);letter-spacing:0;text-transform:none">Daily charts</span></div>
-      <div class="pat-rows" id="patRows"><div class="lrow">Scanning patterns...</div></div>
+      <div class="pat-rows" id="patRows"><div class="lrow">Scanning...</div></div>
     </div>
     <div class="sec">
       <div class="sec-lbl">Earnings calendar</div>
@@ -251,7 +247,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
     </div>
   </div>
 
-  <!-- RIGHT: Timer + Checklist + Journal -->
   <div class="col right">
     <div class="sec">
       <div class="sec-lbl">US session</div>
@@ -341,13 +336,11 @@ const PAT_MAP={
 };
 
 const GROUPS={primary:'Primary instruments',stocks:'Trading stocks',watch:'Watchlist'};
-let S={biasNote:'',checks:[],journal:[],levels:{}};
+let S={checks:[],journal:[],levels:{}};
 let allResults=[];
-let liveQuotes={};
-let prevQuotes={};
 
-function load(){try{const d=localStorage.getItem('phantom_pro3');if(d)Object.assign(S,JSON.parse(d));}catch(e){}}
-function save(){try{localStorage.setItem('phantom_pro3',JSON.stringify(S));}catch(e){}}
+function load(){try{const d=localStorage.getItem('phantom_pro4');if(d)Object.assign(S,JSON.parse(d));}catch(e){}}
+function save(){try{localStorage.setItem('phantom_pro4',JSON.stringify(S));}catch(e){}}
 
 const PROXIES=[
   u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,
@@ -367,7 +360,9 @@ async function fetchYF(sym){
       const prev=m.chartPreviousClose||m.previousClose||price;
       const q=res.indicators?.quote?.[0];
       const closes=(q?.close||[]).filter(x=>x!=null);
-      return{price,change:price-prev,pct:prev?((price-prev)/prev*100):0,closes,h52:m.fiftyTwoWeekHigh,l52:m.fiftyTwoWeekLow};
+      const opens=(q?.open||[]).filter(x=>x!=null);
+      const highs=(q?.high||[]).filter(x=>x!=null);
+      return{price,change:price-prev,pct:prev?((price-prev)/prev*100):0,closes,opens,highs,h52:m.fiftyTwoWeekHigh,l52:m.fiftyTwoWeekLow,prevClose:prev};
     }catch(e){continue;}
   }
   return null;
@@ -379,7 +374,7 @@ async function fhQuote(sym){
     if(!r.ok)return null;
     const d=await r.json();
     if(!d||!d.c||d.c===0)return null;
-    return{price:d.c,change:d.c-d.pc,pct:d.pc?((d.c-d.pc)/d.pc*100):0,high:d.h,low:d.l,open:d.o};
+    return{price:d.c,change:d.c-d.pc,pct:d.pc?((d.c-d.pc)/d.pc*100):0,open:d.o,prevClose:d.pc,high:d.h,low:d.l};
   }catch(e){return null;}
 }
 
@@ -422,6 +417,181 @@ function badge(pct,price,h52){
   return'';
 }
 
+// ── GAP ANALYSIS ENGINE ──
+function classifyGap(ticker, quote, yf, closes, opens){
+  if(!quote||!yf)return null;
+
+  const gapPct=quote.pct; // % change from prev close
+  const absGap=Math.abs(gapPct);
+  const direction=gapPct>0?'up':'down';
+  const prevClose=quote.prevClose||yf.prevClose;
+  const currentPrice=quote.price;
+  const openPrice=quote.open||currentPrice;
+
+  // Filter out noise — less than 0.3% is not a meaningful gap
+  if(absGap<0.3)return null;
+
+  // TREND CONTEXT — what direction has been trending?
+  const e20=ema(closes,20);
+  const e50=ema(closes,50);
+  const e200=ema(closes,200);
+  const trendUp=e20&&e50&&e20>e50;
+  const trendDown=e20&&e50&&e20<e50;
+  const aboveAllEMAs=currentPrice&&e20&&e50&&e200&&currentPrice>e20&&currentPrice>e50&&currentPrice>e200;
+  const belowAllEMAs=currentPrice&&e20&&e50&&e200&&currentPrice<e20&&currentPrice<e50&&currentPrice<e200;
+
+  // KEY LEVEL CHECK — is price at or breaking a significant level?
+  const h52=yf.h52;
+  const l52=yf.l52;
+  const nearATH=h52&&currentPrice>=h52*0.98;
+  const nearYearLow=l52&&currentPrice<=l52*1.03;
+
+  // PRICE ACTION — is gap holding or fading?
+  // Compare current price to open price to detect filling
+  const gapFilling=direction==='up'&&currentPrice<openPrice*0.998;
+  const gapHolding=direction==='up'&&currentPrice>=openPrice*0.998;
+  const gapFillingDn=direction==='down'&&currentPrice>openPrice*1.002;
+  const gapHoldingDn=direction==='down'&&currentPrice<=openPrice*1.002;
+
+  // RECENT TREND — last 5 days direction
+  const recentCloses=closes.slice(-5);
+  const recentTrendUp=recentCloses.length>=2&&recentCloses[recentCloses.length-1]>recentCloses[0];
+  const recentTrendDown=recentCloses.length>=2&&recentCloses[recentCloses.length-1]<recentCloses[0];
+
+  // EXTENDED MOVE CHECK — has price already moved a lot recently?
+  const last20=closes.slice(-20);
+  const priceRange=last20.length>0?(Math.max(...last20)-Math.min(...last20))/Math.min(...last20)*100:0;
+  const overExtended=priceRange>15; // More than 15% range in last 20 days
+
+  // ── CLASSIFICATION LOGIC ──
+  let type, rowCls, badgeCls, badgeText, verdict, confidence;
+
+  // EXHAUSTION GAP — trap for novices
+  // Gap in same direction as recent trend BUT overextended AND near key resistance
+  if(absGap>=1&&overExtended&&((direction==='up'&&recentTrendUp&&nearATH)||(direction==='down'&&recentTrendDown&&nearYearLow))){
+    type='exhaustion';
+    rowCls='exhaustion';
+    badgeCls='gt-exhaustion';
+    badgeText='Exhaustion ⚠';
+    if(direction==='up'){
+      verdict=`<b>Novice trap.</b> Gap up after an extended run near highs. This is the type that catches inexperienced buyers — looks exciting but often reverses fast. ${gapFilling?'Already fading — confirms exhaustion.':'Watch first 5m candle closely. If it can\'t hold, expect a fill.'}`;
+    }else{
+      verdict=`<b>Novice trap.</b> Gap down after extended selling near lows. Panic sellers often capitulate at these levels. ${gapFillingDn?'Already recovering — classic exhaustion bounce.':'Watch for reversal — puts may be a trap here.'}`;
+    }
+    confidence='Low confidence — fade likely';
+  }
+  // BREAKAWAY GAP — institutional move, pro setup
+  else if(absGap>=1.5&&((direction==='up'&&(nearATH||aboveAllEMAs))||(direction==='down'&&(nearYearLow||belowAllEMAs)))){
+    type=direction==='up'?'breakaway-up':'breakaway-dn';
+    rowCls=direction==='up'?'breakaway-up':'breakaway-dn';
+    badgeCls=direction==='up'?'gt-breakaway-up':'gt-breakaway-dn';
+    badgeText=direction==='up'?'Breakaway ↑':'Breakaway ↓';
+    if(direction==='up'){
+      verdict=`<b>Pro setup.</b> Strong gap up ${nearATH?'breaking through ATH — institutional buying.':'with strong EMA alignment.'} ${gapHolding?'Gap holding — bullish. Wait for first 5m candle confirmation then calls setup.':'Watch if it holds open — a pullback to the gap edge with a positive COG is your entry.'}`;
+    }else{
+      verdict=`<b>Pro setup.</b> Strong gap down ${nearYearLow?'breaking year lows — institutional selling.':'with bearish EMA alignment.'} ${gapHoldingDn?'Gap holding — bearish. Watch for dead cat bounce rejection.':'Monitor for a bounce attempt — if it fails at gap level, puts setup.'}`;
+    }
+    confidence='High confidence — follow the direction';
+  }
+  // RUNAWAY / CONTINUATION GAP — trend continuation
+  else if(absGap>=0.8&&((direction==='up'&&trendUp&&!overExtended)||(direction==='down'&&trendDown&&!overExtended))){
+    type='runaway-up';
+    rowCls=direction==='up'?'runaway-up':'runaway-dn';
+    badgeCls='gt-runaway';
+    badgeText='Continuation →';
+    verdict=`<b>Trend continuation.</b> Gap ${direction} in line with existing ${direction==='up'?'uptrend':'downtrend'}. Not overextended so there is room to run. ${direction==='up'?'Calls viable if first 5m candle is green and holds above open.':'Puts viable if first 5m candle stays red and holds below open.'}`;
+    confidence='Medium confidence — trend aligned';
+  }
+  // COMMON GAP — noise, ignore
+  else{
+    type='common';
+    rowCls='common';
+    badgeCls='gt-common';
+    badgeText='Common gap';
+    verdict=`<b>Low significance.</b> Small gap with no key level confluence. These fill regularly and offer no edge. ${absGap<0.5?'Under 0.5% — effectively noise. Ignore.':'Watch first candle but no strong directional bias.'}`;
+    confidence='No edge — wait for confirmation';
+  }
+
+  return{
+    sym:ticker.s,name:ticker.n,
+    gapPct,direction,absGap,
+    price:currentPrice,open:openPrice,prevClose,
+    type,rowCls,badgeCls,badgeText,verdict,confidence,
+    nearATH,trendUp,trendDown,overExtended,
+    gapHolding:direction==='up'?gapHolding:gapHoldingDn,
+  };
+}
+
+async function updateGapScanner(){
+  const container=document.getElementById('gapRows');
+  const now=new Date();
+  document.getElementById('gapUpdated').textContent='Updated '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+
+  const gaps=[];
+  await Promise.all(allResults.map(async({t,d})=>{
+    const q=await fhQuote(t.s);
+    if(!q||!d)return;
+    const result=classifyGap(t,q,d,d.closes||[],d.opens||[]);
+    if(result)gaps.push(result);
+  }));
+
+  container.innerHTML='';
+
+  // Sort: breakaway first, then runaway, then exhaustion, then common
+  const order={breakaway:0,'breakaway-up':0,'breakaway-dn':0,runaway:1,'runaway-up':1,'runaway-dn':1,exhaustion:2,common:3};
+  gaps.sort((a,b)=>{
+    const ao=order[a.type]??3,bo=order[b.type]??3;
+    if(ao!==bo)return ao-bo;
+    return b.absGap-a.absGap;
+  });
+
+  const significant=gaps.filter(g=>g.type!=='common');
+  const common=gaps.filter(g=>g.type==='common');
+
+  if(!gaps.length){
+    container.innerHTML=`<div class="gap-no-sig">No significant gaps detected today.<br><span style="color:var(--text4);font-size:10px">All tickers within ±0.3% of previous close</span></div>`;
+    return;
+  }
+
+  // Show significant gaps first
+  significant.forEach(g=>renderGapRow(g,container));
+
+  // Show common gaps collapsed
+  if(common.length){
+    const div=document.createElement('div');
+    div.style.cssText='font-size:10px;color:var(--text4);padding:8px 0 4px;border-top:1px solid var(--b1);margin-top:4px';
+    div.textContent=`${common.length} common gap${common.length>1?'s':''} (low significance): ${common.map(g=>`${g.sym} ${g.gapPct>0?'+':''}${g.gapPct.toFixed(1)}%`).join(' · ')}`;
+    container.appendChild(div);
+  }
+
+  if(!significant.length){
+    container.innerHTML='';
+    container.innerHTML=`<div class="gap-no-sig">No significant gaps today — only common gaps detected.<br><span style="color:var(--text4);font-size:10px">${common.map(g=>`${g.sym} ${g.gapPct>0?'+':''}${g.gapPct.toFixed(1)}%`).join(' · ')}</span></div>`;
+  }
+}
+
+function renderGapRow(g,container){
+  const row=document.createElement('div');
+  row.className=`gap-row ${g.rowCls}`;
+  const cl=g.gapPct>0?'up':'down',sg=g.gapPct>0?'+':'';
+  row.innerHTML=`
+    <div class="gap-top">
+      <div class="gap-sym">${g.sym}</div>
+      <div class="gap-price">$${fp(g.price)}</div>
+      <div class="gap-pct"><span class="${cl}">${sg}${g.gapPct.toFixed(2)}%</span></div>
+      <div class="gap-type-badge ${g.badgeCls}">${g.badgeText}</div>
+    </div>
+    <div class="gap-verdict">${g.verdict}</div>
+    <div class="gap-stats">
+      <div class="gap-stat">Prev close: $${fp(g.prevClose)}</div>
+      <div class="gap-stat">Gap size: ${g.absGap.toFixed(2)}%</div>
+      <div class="gap-stat" style="color:${g.gapHolding?'var(--green)':'var(--amber)'}">${g.gapHolding?'Holding':'Fading'}</div>
+      ${g.nearATH?'<div class="gap-stat" style="color:var(--purple)">Near ATH</div>':''}
+      ${g.overExtended?'<div class="gap-stat" style="color:var(--amber)">Extended</div>':''}
+    </div>`;
+  container.appendChild(row);
+}
+
 async function updateMacro(){
   const results=await Promise.all(MACRO_SYMS.map(async m=>{
     const d=await fetchYF(m.s);
@@ -436,42 +606,36 @@ function buildConditions(results){
   let score=0;const pills=[],issues=[],positives=[];
   if(vix){
     const v=vix.price;
-    if(v<15){pills.push({t:`VIX ${v.toFixed(1)}`,c:'bp-g'});positives.push('VIX calm — good conditions for calls');}
+    if(v<15){pills.push({t:`VIX ${v.toFixed(1)}`,c:'bp-g'});positives.push('VIX calm — good conditions');}
     else if(v<20){pills.push({t:`VIX ${v.toFixed(1)}`,c:'bp-n'});score++;}
     else if(v<25){pills.push({t:`VIX ${v.toFixed(1)} ⚠`,c:'bp-a'});score+=2;issues.push(`VIX elevated at ${v.toFixed(1)} — be selective`);}
-    else{pills.push({t:`VIX ${v.toFixed(1)} !`,c:'bp-r'});score+=3;issues.push(`VIX HIGH at ${v.toFixed(1)} — do not buy calls`);}
-    if(vix.pct<-5)positives.push('VIX falling fast — fear leaving market');
-    if(vix.pct>5)issues.push('VIX spiking — fear entering market fast');
+    else{pills.push({t:`VIX ${v.toFixed(1)} !`,c:'bp-r'});score+=3;issues.push(`VIX HIGH — do not buy calls`);}
+    if(vix.pct<-5)positives.push('VIX falling fast — fear leaving');
+    if(vix.pct>5)issues.push('VIX spiking — fear building');
   }
   if(oil){
     const v=oil.price;
-    if(v>100){pills.push({t:`Oil $${v.toFixed(0)} !`,c:'bp-r'});score+=2;issues.push(`Oil critical at $${v.toFixed(0)} — inflation risk high`);}
-    else if(v>90){pills.push({t:`Oil $${v.toFixed(0)} ⚠`,c:'bp-a'});score++;issues.push(`Oil elevated — watch CPI impact`);}
-    else{pills.push({t:`Oil $${v.toFixed(0)}`,c:'bp-g'});positives.push('Oil contained — no inflation pressure');}
+    if(v>100){pills.push({t:`Oil $${v.toFixed(0)} !`,c:'bp-r'});score+=2;issues.push(`Oil critical at $${v.toFixed(0)}`);}
+    else if(v>90){pills.push({t:`Oil $${v.toFixed(0)} ⚠`,c:'bp-a'});score++;issues.push('Oil elevated — watch CPI');}
+    else{pills.push({t:`Oil $${v.toFixed(0)}`,c:'bp-g'});positives.push('Oil contained');}
   }
   if(gold){
     const cp=gold.pct,v=gold.price;
     if(cp>1.5){pills.push({t:`Gold +${cp.toFixed(1)}%`,c:'bp-a'});score++;issues.push('Gold rising — risk-off building');}
-    else if(cp<-1){pills.push({t:`Gold ${cp.toFixed(1)}%`,c:'bp-g'});positives.push('Gold falling — risk-on environment');}
+    else if(cp<-1){pills.push({t:`Gold ${cp.toFixed(1)}%`,c:'bp-g'});positives.push('Gold falling — risk-on');}
     else pills.push({t:`Gold $${v.toFixed(0)}`,c:'bp-n'});
   }
   if(dxy){
     const v=dxy.price,cp=dxy.pct;
-    if(v>105){pills.push({t:`DXY ${v.toFixed(1)} ⚠`,c:'bp-a'});score++;issues.push('Strong dollar — headwind for stocks');}
-    else if(cp<-0.5){pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-g'});positives.push('Dollar weakening — bullish tailwind');}
+    if(v>105){pills.push({t:`DXY ${v.toFixed(1)} ⚠`,c:'bp-a'});score++;issues.push('Strong dollar — headwind');}
+    else if(cp<-0.5){pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-g'});positives.push('Dollar weakening — tailwind');}
     else pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-n'});
   }
   const b=document.getElementById('condBanner');
-  const msgs={0:['banner green','🟢','Favourable conditions',`All macro supportive. ${positives.join('. ')}. Standard entry rules apply.`],
-    2:['banner amber','🟡','Cautious conditions',`${[...issues,...positives].join('. ')}. Strong confluence required.`],
-    4:['banner red','🔴','Unfavourable conditions',`${issues.join('. ')}. A+ setups only — no marginal entries.`],
-    99:['banner dark','⚫','Risk off — extreme caution',`${issues.join('. ')}. Puts only or no trades today.`]};
-  const key=score===0?0:score<=2?2:score<=4?4:99;
-  const[cls,icon,title,text]=msgs[key];
-  b.className=cls;
-  document.getElementById('condIcon').textContent=icon;
-  document.getElementById('condTitle').textContent=title;
-  document.getElementById('condText').textContent=text;
+  if(score===0){b.className='banner green';document.getElementById('condIcon').textContent='🟢';document.getElementById('condTitle').textContent='Favourable conditions';document.getElementById('condText').textContent=`All macro supportive. ${positives.join('. ')}. Standard entry rules apply.`;}
+  else if(score<=2){b.className='banner amber';document.getElementById('condIcon').textContent='🟡';document.getElementById('condTitle').textContent='Cautious conditions';document.getElementById('condText').textContent=`${[...issues,...positives].join('. ')}. Strong confluence required before entries.`;}
+  else if(score<=4){b.className='banner red';document.getElementById('condIcon').textContent='🔴';document.getElementById('condTitle').textContent='Unfavourable conditions';document.getElementById('condText').textContent=`${issues.join('. ')}. A+ setups only today.`;}
+  else{b.className='banner dark';document.getElementById('condIcon').textContent='⚫';document.getElementById('condTitle').textContent='Risk off — extreme caution';document.getElementById('condText').textContent=`${issues.join('. ')}. Puts only or no trades.`;}
   document.getElementById('condPills').innerHTML=pills.map(p=>`<div class="bpill ${p.c}">${p.t}</div>`).join('');
 }
 
@@ -482,13 +646,8 @@ async function buildTickers(){
     const[q,yf]=await Promise.all([fhQuote(t.s),fetchYF(t.s)]);
     const price=q?.price||yf?.price;
     const closes=yf?.closes||[];
-    return{t,d:{price,change:q?.change||yf?.change||0,pct:q?.pct||yf?.pct||0,closes,h52:yf?.h52,l52:yf?.l52}};
+    return{t,d:{price,change:q?.change||yf?.change||0,pct:q?.pct||yf?.pct||0,closes,opens:yf?.opens||[],h52:yf?.h52,l52:yf?.l52,prevClose:q?.prevClose||yf?.prevClose}};
   }));
-  renderTickerCards();
-}
-
-function renderTickerCards(){
-  const grid=document.getElementById('tickerCards');
   grid.innerHTML='';
   ['primary','stocks','watch'].forEach(grp=>{
     const items=allResults.filter(r=>r.t.g===grp);
@@ -497,39 +656,32 @@ function renderTickerCards(){
     sep.className='gsep';
     sep.innerHTML=`<div class="gs-line"></div><div class="gs-lbl">${GROUPS[grp]}</div><div class="gs-line"></div>`;
     grid.appendChild(sep);
-    const cg=document.createElement('div');
-    cg.className='cards-grid';
+    const cg=document.createElement('div');cg.className='cards-grid';
     items.forEach(({t,d})=>{
-      const lq=liveQuotes[t.s];
-      const price=lq?.price||d?.price;
-      const pct=lq?.pct||d?.pct||0;
-      const change=lq?.change||d?.change||0;
-      const closes=d?.closes||[];
+      const price=d?.price,pct=d?.pct||0,closes=d?.closes||[];
       const e20=ema(closes,20),e50=ema(closes,50),e200=ema(closes,200);
       const a20=price&&e20?price>e20:null;
       const a50=price&&e50?price>e50:null;
       const a200=price&&e200?price>e200:null;
-      // M→W→D→1H left to right
-      const tM=getTrend(closes,price,200); // Monthly — 200d EMA
-      const tW=getTrend(closes,price,50);  // Weekly — 50d EMA
-      const tD=getTrend(closes,price,20);  // Daily — 20d EMA
-      const t1h=getTrend(closes,price,5);  // 1H proxy — 5d EMA
+      const tM=getTrend(closes,price,200);
+      const tW=getTrend(closes,price,50);
+      const tD=getTrend(closes,price,20);
+      const t1h=getTrend(closes,price,5);
       const mCls=pct>1.5?'mup':pct<-1.5?'mdown':grp==='primary'?'pri':'';
       const sl=S.levels[t.s]||{};
       const dot=v=>v===null?`<div class="ed unk"></div>`:`<div class="ed ${v?'on':'off'}"></div>`;
       const emaLabel=`${e20?e20.toFixed(0):'?'} · ${e50?e50.toFixed(0):'?'} · ${e200?e200.toFixed(0):'?'}`;
-      const card=document.createElement('div');
-      card.className=`tcard ${mCls}`;
+      const card=document.createElement('div');card.className=`tcard ${mCls}`;
       card.innerHTML=`
         <div class="tc-top">
           <div><div class="tc-sym">${t.s}</div><div class="tc-name">${t.n}</div></div>
           ${badge(pct,price,d?.h52)}
         </div>
         <div class="tc-price">${fp(price)}</div>
-        <div class="tc-chg">${fc(change,pct)||'<span class="flat">--</span>'}</div>
+        <div class="tc-chg">${fc(d?.change,pct)||'<span class="flat">--</span>'}</div>
         <div class="tc-ema">
           <div class="ema-stack">${dot(a20)}${dot(a50)}${dot(a200)}</div>
-          <div class="ema-vals">20·50·200 EMA: ${emaLabel}</div>
+          <div class="ema-vals">20·50·200: ${emaLabel}</div>
         </div>
         <div class="tc-trends">
           <div class="tcell"><div class="ttf">Month</div>${tarr(tM)}</div>
@@ -548,46 +700,6 @@ function renderTickerCards(){
       cg.appendChild(card);
     });
     grid.appendChild(cg);
-  });
-}
-
-// LIVE MOMENTUM SCANNER — updates every 30s independently
-async function updateLiveScanner(){
-  prevQuotes={...liveQuotes};
-  const quotes=await Promise.all(TICKERS.map(async t=>{
-    const q=await fhQuote(t.s);
-    if(q)liveQuotes[t.s]=q;
-    return{t,q:liveQuotes[t.s]||null};
-  }));
-  const grid=document.getElementById('scanRows');
-  grid.innerHTML='';
-  const sorted=[...quotes].filter(r=>r.q).sort((a,b)=>Math.abs(b.q.pct)-Math.abs(a.q.pct));
-  sorted.forEach(({t,q})=>{
-    const prev=prevQuotes[t.s];
-    const moving=prev&&Math.abs(q.price-prev.price)>0.05;
-    const fire=q.pct>3;
-    const crash=q.pct<-3;
-    const row=document.createElement('div');
-    const borderCls=q.pct>1?'mup':q.pct<-1?'mdown':'';
-    const bgCls=fire?'fire':crash?'crash':'';
-    row.className=`scan-row ${borderCls} ${bgCls}`;
-    const cl=q.pct>0?'up':'down';
-    const sg=q.pct>=0?'+':'';
-    const movingArrow=moving?(q.price>(prev?.price||q.price)?'↑':'↓'):'';
-    const movingColor=movingArrow==='↑'?'var(--green)':movingArrow==='↓'?'var(--red)':'';
-    let scanBadge='';
-    if(fire)scanBadge=`<span class="scan-badge" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)">RIPPING</span>`;
-    else if(crash)scanBadge=`<span class="scan-badge" style="background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:var(--red)">FLUSHING</span>`;
-    row.innerHTML=`
-      <div class="scan-sym">${t.s}</div>
-      <div class="scan-price">${fp(q.price)}</div>
-      <div class="scan-name">${t.n}</div>
-      ${scanBadge}
-      <div class="scan-pct">
-        <span class="${cl}">${sg}${q.pct.toFixed(2)}%</span>
-        ${movingArrow?`<span class="scan-arrow" style="color:${movingColor}">${movingArrow}</span>`:''}
-      </div>`;
-    grid.appendChild(row);
   });
 }
 
@@ -610,20 +722,14 @@ async function updatePatterns(){
   }));
   container.innerHTML='';
   all.sort((a,b)=>b.ts-a.ts);
-  const shown=all.slice(0,8);
-  if(!shown.length){
-    container.innerHTML='<div class="lrow">No significant patterns on daily charts</div>';return;
-  }
-  shown.forEach(({sym,info,price})=>{
+  if(!all.length){container.innerHTML='<div class="lrow">No significant patterns on daily charts</div>';return;}
+  all.slice(0,8).forEach(({sym,info,price})=>{
     const row=document.createElement('div');row.className='pat-row';
     const sc=info.sig==='bull'?'ps-bull':info.sig==='bear'?'ps-bear':'ps-neut';
     const st=info.sig==='bull'?'Bullish':info.sig==='bear'?'Bearish':'Neutral';
     row.innerHTML=`
       <div class="pat-sym">${sym}</div>
-      <div class="pat-info">
-        <div class="pat-name">${info.n}</div>
-        <div class="pat-desc">${info.d}${price?` — $${price.toFixed(2)}`:''}</div>
-      </div>
+      <div class="pat-info"><div class="pat-name">${info.n}</div><div class="pat-desc">${info.d}${price?` — $${price.toFixed(2)}`:''}</div></div>
       <div class="pat-sig ${sc}">${st}</div>`;
     container.appendChild(row);
   });
@@ -639,10 +745,7 @@ async function updateEarnings(){
     if(!r.ok)throw new Error();
     const d=await r.json();
     container.innerHTML='';
-    const relevant=(d?.earningsCalendar||[])
-      .filter(e=>EARN_WATCH.includes(e.symbol))
-      .sort((a,b)=>new Date(a.date)-new Date(b.date))
-      .slice(0,10);
+    const relevant=(d?.earningsCalendar||[]).filter(e=>EARN_WATCH.includes(e.symbol)).sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,10);
     if(!relevant.length){container.innerHTML='<div class="lrow">No upcoming earnings for your watchlist</div>';return;}
     relevant.forEach(e=>{
       const diff=Math.round((new Date(e.date)-new Date().setHours(0,0,0,0))/(1000*60*60*24));
@@ -654,10 +757,7 @@ async function updateEarnings(){
       const est=e.epsEstimate?`EPS est: $${parseFloat(e.epsEstimate).toFixed(2)}`:'';
       row.innerHTML=`
         <div class="earn-sym">${e.symbol}</div>
-        <div class="earn-info">
-          <div class="earn-date">${e.date}</div>
-          <div class="earn-when">${[when,est].filter(Boolean).join(' · ')}</div>
-        </div>
+        <div class="earn-info"><div class="earn-date">${e.date}</div><div class="earn-when">${[when,est].filter(Boolean).join(' · ')}</div></div>
         <div class="earn-badge ${bc}">${bt}</div>`;
       container.appendChild(row);
     });
@@ -736,7 +836,7 @@ async function refreshAll(){
   const btn=document.getElementById('rfBtn');
   btn.innerHTML='<i class="ti ti-refresh spin"></i> Refreshing';btn.disabled=true;
   await Promise.all([updateMacro(),buildTickers(),updatePatterns(),updateEarnings()]);
-  await updateLiveScanner();
+  await updateGapScanner();
   document.getElementById('lastUpdate').textContent='Updated '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
   btn.innerHTML='<i class="ti ti-refresh"></i> Refresh';btn.disabled=false;
 }
@@ -745,10 +845,8 @@ async function init(){
   load();buildCL();buildJournal();
   updateClock();setInterval(updateClock,1000);
   await refreshAll();
-  // Full refresh every 90s
   setInterval(refreshAll,90000);
-  // Live scanner updates every 30s independently
-  setInterval(updateLiveScanner,30000);
+  setInterval(updateGapScanner,60000);
 }
 init();
 </script>
