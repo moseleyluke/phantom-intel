@@ -17,6 +17,7 @@
 html,body{height:100%;overflow:hidden}
 body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe UI',system-ui,sans-serif;font-size:13px}
 
+/* TOPBAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;background:var(--bg2);border-bottom:1px solid var(--b1);position:sticky;top:0;z-index:100}
 .logo{font-size:15px;font-weight:600;letter-spacing:1px;color:var(--text)}
 .logo span{color:var(--blue)}
@@ -29,6 +30,7 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .rfbtn{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--b2);border-radius:6px;padding:5px 14px;color:var(--text2);cursor:pointer;font-size:12px;font-family:inherit;transition:all .15s}
 .rfbtn:hover{border-color:var(--blue);color:var(--blue)}
 
+/* LAYOUT */
 .main{display:grid;grid-template-columns:1fr 1fr 300px;height:calc(100vh - 48px);overflow:hidden}
 .col{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
 .col.mid{border-left:1px solid var(--b1)}
@@ -51,11 +53,11 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .bp-a{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.2);color:var(--amber)}
 .bp-n{background:rgba(255,255,255,.03);border-color:var(--b2);color:var(--text3)}
 
+/* SECTION */
 .sec{background:var(--bg2);border:1px solid var(--b1);border-radius:10px;padding:14px 16px}
 .sec-lbl{font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
 .sec-btn{font-size:10px;background:var(--bg3);border:1px solid var(--b1);border-radius:4px;padding:2px 10px;color:var(--text3);cursor:pointer;font-family:inherit;letter-spacing:0;text-transform:none;transition:all .15s}
 .sec-btn:hover{border-color:var(--blue);color:var(--blue)}
-
 .gsep{display:flex;align-items:center;gap:8px;padding:5px 0 2px}
 .gs-lbl{font-size:9px;letter-spacing:2px;color:var(--text4);text-transform:uppercase;white-space:nowrap}
 .gs-line{flex:1;height:1px;background:var(--b1)}
@@ -68,7 +70,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .tcard.mup::after{background:var(--green)}
 .tcard.mdown::after{background:var(--red)}
 .tcard.pri::after{background:var(--blue)}
-
 .tc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
 .tc-sym{font-size:14px;font-weight:600;color:var(--text)}
 .tc-name{font-size:9px;color:var(--text3);margin-top:2px}
@@ -78,25 +79,29 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .mb-wk{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2);color:var(--red)}
 .mb-vwk{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.2);color:var(--amber)}
 .mb-ath{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.25);color:var(--purple)}
-
 .tc-price{font-size:24px;font-weight:600;color:var(--text);margin-bottom:3px;letter-spacing:-.5px}
 .tc-chg{font-size:12px;margin-bottom:10px}
 .up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--text3)}
 
-/* EMA STACK */
-.tc-ema{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+/* EMA DOTS */
+.tc-ema{display:flex;align-items:center;gap:6px;margin-bottom:12px}
 .ema-stack{display:flex;gap:3px}
 .ed{width:10px;height:10px;border-radius:50%}
-.ed.on{background:var(--green)}.ed.off{background:rgba(239,68,68,.4)}
+.ed.on{background:var(--green)}.ed.off{background:rgba(239,68,68,.4)}.ed.unk{background:var(--text4)}
 .ema-vals{font-size:9px;color:var(--text4)}
 
-/* TREND ARROWS */
-.tc-trends{display:flex;gap:4px}
+/* TREND ARROWS — BIGGER, HORIZONTAL, M→W→D→1H */
+.tc-trends{display:flex;gap:5px;align-items:center}
 .tcell{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
-.ttf{font-size:8px;color:var(--text4);letter-spacing:.5px;text-transform:uppercase}
-.tarr{width:100%;height:24px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
-.tbull{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.2)}
-.tbear{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.ttf{font-size:9px;color:var(--text3);letter-spacing:.5px;text-transform:uppercase;font-weight:500}
+.tarr{
+  width:100%;height:44px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:700;
+  transition:background .2s;
+}
+.tbull{background:rgba(34,197,94,.14);color:var(--green);border:1px solid rgba(34,197,94,.25)}
+.tbear{background:rgba(239,68,68,.14);color:var(--red);border:1px solid rgba(239,68,68,.25)}
 .tneut{background:rgba(255,255,255,.04);color:var(--text4);border:1px solid var(--b1)}
 
 /* KEY LEVELS */
@@ -108,14 +113,24 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .lr-inp{background:transparent;border:none;border-bottom:1px solid var(--b2);color:var(--text);font-family:inherit;font-size:11px;font-weight:500;width:100px;text-align:right;padding:1px 0}
 .lr-inp:focus{outline:none;border-bottom-color:var(--blue)}
 
-/* SCANNER */
+/* MOMENTUM SCANNER — LIVE */
+.scan-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.scan-lbl{font-size:9px;letter-spacing:2px;color:var(--text3);text-transform:uppercase}
+.scan-live{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--green)}
+.scan-pulse{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .scan-rows{display:flex;flex-direction:column;gap:4px}
-.scan-row{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg3);border-radius:6px;border-left:2px solid transparent}
+.scan-row{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg3);border-radius:6px;border-left:2px solid transparent;transition:border-color .3s}
 .scan-row.mup{border-left-color:var(--green)}
 .scan-row.mdown{border-left-color:var(--red)}
-.scan-sym{font-size:13px;font-weight:600;color:var(--text);width:55px;flex-shrink:0}
+.scan-row.fire{background:rgba(34,197,94,.06);border-color:var(--green)}
+.scan-row.crash{background:rgba(239,68,68,.06);border-color:var(--red)}
+.scan-sym{font-size:13px;font-weight:600;color:var(--text);width:50px;flex-shrink:0}
+.scan-price{font-size:12px;color:var(--text2);width:65px;flex-shrink:0}
 .scan-name{font-size:10px;color:var(--text3);flex:1}
-.scan-pct{font-size:13px;font-weight:600}
+.scan-pct{font-size:13px;font-weight:700;text-align:right;min-width:60px}
+.scan-arrow{font-size:11px;margin-left:2px}
+.scan-badge{font-size:9px;padding:1px 6px;border-radius:3px;font-weight:600;border:1px solid;margin-left:4px}
 
 /* PATTERNS */
 .pat-rows{display:flex;flex-direction:column;gap:4px}
@@ -157,18 +172,6 @@ body{background:var(--bg);color:var(--text);font-family:'SF Pro Display','Segoe 
 .tm-t{font-size:13px;font-weight:600;color:var(--text);margin-top:3px}
 .tm-n{font-size:9px;color:var(--text4);margin-top:2px}
 
-/* BIAS */
-.bbtns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
-.bbtn{padding:10px;border-radius:7px;border:1px solid var(--b1);background:var(--bg3);color:var(--text3);cursor:pointer;font-family:inherit;font-size:12px;transition:all .15s;font-weight:500}
-.bbtn:hover{border-color:var(--b3);color:var(--text2)}
-.bbtn.bull.on{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)}
-.bbtn.bear.on{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:var(--red)}
-.bbtn.neut.on{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);color:var(--amber)}
-.bbtn.wait.on{background:rgba(148,163,184,.08);border-color:var(--b2);color:var(--text2)}
-textarea{width:100%;background:var(--bg3);border:1px solid var(--b1);border-radius:7px;padding:9px 12px;color:var(--text);font-family:inherit;font-size:12px;resize:none;line-height:1.6;transition:border-color .15s}
-textarea::placeholder{color:var(--text4)}
-textarea:focus{outline:none;border-color:var(--blue)}
-
 /* CHECKLIST */
 .ci{display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid var(--b1);cursor:pointer}
 .ci:last-child{border-bottom:none}
@@ -182,7 +185,7 @@ textarea:focus{outline:none;border-color:var(--blue)}
 .score-num{font-size:13px;font-weight:600;color:var(--text)}
 
 /* JOURNAL */
-.jentries{max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.jentries{max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:4px;margin-top:8px}
 .je{background:var(--bg3);border-radius:6px;padding:8px 12px;border-left:2px solid var(--b3)}
 .je-date{font-size:9px;color:var(--text4)}
 .je-txt{font-size:11px;color:var(--text2);margin-top:3px;line-height:1.5}
@@ -215,10 +218,12 @@ textarea:focus{outline:none;border-color:var(--blue)}
 </div>
 
 <div class="main">
+
+  <!-- LEFT: Banner + Ticker cards -->
   <div class="col">
     <div id="condBanner" class="banner amber">
       <div class="ban-top">
-        <div style="font-size:18px" id="condIcon">⚡</div>
+        <div style="font-size:20px" id="condIcon">⚡</div>
         <div><div class="ban-label">Market conditions</div><div class="ban-title" id="condTitle">Analysing...</div></div>
       </div>
       <div class="ban-text" id="condText">Loading macro data...</div>
@@ -227,14 +232,18 @@ textarea:focus{outline:none;border-color:var(--blue)}
     <div id="tickerCards"><div class="lrow">Loading tickers...</div></div>
   </div>
 
+  <!-- MID: Live scanner + Patterns + Earnings -->
   <div class="col mid">
     <div class="sec">
-      <div class="sec-lbl">Momentum scanner</div>
+      <div class="scan-header">
+        <div class="scan-lbl">Momentum scanner</div>
+        <div class="scan-live"><div class="scan-pulse"></div>Live — updates every 30s</div>
+      </div>
       <div class="scan-rows" id="scanRows"><div class="lrow">Loading...</div></div>
     </div>
     <div class="sec">
       <div class="sec-lbl">Pattern scanner <span style="font-size:9px;color:var(--text4);letter-spacing:0;text-transform:none">Daily charts</span></div>
-      <div class="pat-rows" id="patRows"><div class="lrow">Scanning...</div></div>
+      <div class="pat-rows" id="patRows"><div class="lrow">Scanning patterns...</div></div>
     </div>
     <div class="sec">
       <div class="sec-lbl">Earnings calendar</div>
@@ -242,6 +251,7 @@ textarea:focus{outline:none;border-color:var(--blue)}
     </div>
   </div>
 
+  <!-- RIGHT: Timer + Checklist + Journal -->
   <div class="col right">
     <div class="sec">
       <div class="sec-lbl">US session</div>
@@ -255,16 +265,6 @@ textarea:focus{outline:none;border-color:var(--blue)}
         <div class="tm" id="tm1"><div class="tm-lbl">Mid</div><div class="tm-t">17:00</div><div class="tm-n">Theta rising</div></div>
         <div class="tm" id="tm2"><div class="tm-lbl">Close</div><div class="tm-t">21:00</div><div class="tm-n">No new trades</div></div>
       </div>
-    </div>
-    <div class="sec">
-      <div class="sec-lbl">Today's bias</div>
-      <div class="bbtns">
-        <button class="bbtn bull" onclick="setBias('bull')">▲ Bullish</button>
-        <button class="bbtn bear" onclick="setBias('bear')">▼ Bearish</button>
-        <button class="bbtn neut" onclick="setBias('neut')">◆ Neutral</button>
-        <button class="bbtn wait" onclick="setBias('wait')">◉ Wait</button>
-      </div>
-      <textarea id="biasNote" rows="2" placeholder="Why? e.g. VIX falling, CPI cool, SPY above $734..."></textarea>
     </div>
     <div class="sec">
       <div class="sec-lbl">Pre-trade checklist <button class="sec-btn" onclick="resetCL()">Reset</button></div>
@@ -333,7 +333,7 @@ const PAT_MAP={
   'hangingman':{n:'Hanging man',d:'Bearish reversal at highs — watch for follow-through',sig:'bear'},
   'shootingstar':{n:'Shooting star',d:'Sellers rejecting higher prices — supply zone active',sig:'bear'},
   'invertedhammer':{n:'Inverted hammer',d:'Potential bullish reversal — wait for confirmation',sig:'bull'},
-  'doji':{n:'Doji',d:'Indecision — wait for next candle before entry',sig:'neut'},
+  'doji':{n:'Doji',d:'Indecision — wait for next candle direction before entry',sig:'neut'},
   'piercingline':{n:'Piercing line',d:'Bullish reversal — buyers reclaiming ground',sig:'bull'},
   'darkcloudcover':{n:'Dark cloud cover',d:'Bearish reversal — sellers pushing from above',sig:'bear'},
   'threewhitesoldiers':{n:'Three white soldiers',d:'Strong consecutive bullish momentum',sig:'bull'},
@@ -341,20 +341,20 @@ const PAT_MAP={
 };
 
 const GROUPS={primary:'Primary instruments',stocks:'Trading stocks',watch:'Watchlist'};
-let S={bias:null,biasNote:'',checks:[],journal:[],levels:{}};
+let S={biasNote:'',checks:[],journal:[],levels:{}};
 let allResults=[];
+let liveQuotes={};
+let prevQuotes={};
 
-function load(){try{const d=localStorage.getItem('phantom_pro2');if(d)Object.assign(S,JSON.parse(d));}catch(e){}}
-function save(){try{localStorage.setItem('phantom_pro2',JSON.stringify(S));}catch(e){}}
+function load(){try{const d=localStorage.getItem('phantom_pro3');if(d)Object.assign(S,JSON.parse(d));}catch(e){}}
+function save(){try{localStorage.setItem('phantom_pro3',JSON.stringify(S));}catch(e){}}
 
-// Fetch via CORS proxy for macro (Yahoo Finance)
 const PROXIES=[
   u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,
   u=>`https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
 ];
 
 async function fetchYF(sym){
-  // Use longer range to get enough candles for EMA calculations
   const base=`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=1y`;
   for(const px of PROXIES){
     try{
@@ -365,30 +365,22 @@ async function fetchYF(sym){
       const m=res.meta;
       const price=m.regularMarketPrice||m.previousClose;
       const prev=m.chartPreviousClose||m.previousClose||price;
-      const change=price-prev,pct=prev?((change/prev)*100):0;
       const q=res.indicators?.quote?.[0];
       const closes=(q?.close||[]).filter(x=>x!=null);
-      return{price,change,pct,closes,h52:m.fiftyTwoWeekHigh,l52:m.fiftyTwoWeekLow};
+      return{price,change:price-prev,pct:prev?((price-prev)/prev*100):0,closes,h52:m.fiftyTwoWeekHigh,l52:m.fiftyTwoWeekLow};
     }catch(e){continue;}
   }
   return null;
 }
 
-// Finnhub for quotes (more reliable, no CORS issues)
 async function fhQuote(sym){
   try{
-    const r=await fetch(`${FH}/quote?symbol=${sym}&token=${KEY}`,{signal:AbortSignal.timeout(8000)});
+    const r=await fetch(`${FH}/quote?symbol=${sym}&token=${KEY}`,{signal:AbortSignal.timeout(6000)});
     if(!r.ok)return null;
     const d=await r.json();
     if(!d||!d.c||d.c===0)return null;
-    return{price:d.c,change:d.c-d.pc,pct:d.pc?((d.c-d.pc)/d.pc*100):0,high:d.h,low:d.l};
+    return{price:d.c,change:d.c-d.pc,pct:d.pc?((d.c-d.pc)/d.pc*100):0,high:d.h,low:d.l,open:d.o};
   }catch(e){return null;}
-}
-
-// Get candles from Yahoo Finance (1 year range for proper EMA)
-async function getCandles(sym){
-  const d=await fetchYF(sym);
-  return d?.closes||[];
 }
 
 function ema(data,p){
@@ -421,7 +413,7 @@ function fc(c,pct){
   return`<span class="${cl}">${sg}${c.toFixed(2)} (${sg}${pct.toFixed(2)}%)</span>`;
 }
 
-function badge(pct,price,h52,l52){
+function badge(pct,price,h52){
   if(h52&&price>=h52*0.999)return'<div class="tc-badge mb-ath">ATH</div>';
   if(pct>5)return'<div class="tc-badge mb-hot">▲ HOT</div>';
   if(pct>2)return'<div class="tc-badge mb-str">▲ STRONG</div>';
@@ -441,83 +433,62 @@ async function updateMacro(){
 function buildConditions(results){
   const get=id=>results.find(r=>r.id===id)?.d;
   const vix=get('vix'),oil=get('oil'),gold=get('gold'),dxy=get('dxy');
-  let score=0;
-  const pills=[],issues=[],positives=[];
-
+  let score=0;const pills=[],issues=[],positives=[];
   if(vix){
     const v=vix.price;
     if(v<15){pills.push({t:`VIX ${v.toFixed(1)}`,c:'bp-g'});positives.push('VIX calm — good conditions for calls');}
     else if(v<20){pills.push({t:`VIX ${v.toFixed(1)}`,c:'bp-n'});score++;}
-    else if(v<25){pills.push({t:`VIX ${v.toFixed(1)} ⚠`,c:'bp-a'});score+=2;issues.push(`VIX elevated at ${v.toFixed(1)} — be selective, avoid marginal setups`);}
+    else if(v<25){pills.push({t:`VIX ${v.toFixed(1)} ⚠`,c:'bp-a'});score+=2;issues.push(`VIX elevated at ${v.toFixed(1)} — be selective`);}
     else{pills.push({t:`VIX ${v.toFixed(1)} !`,c:'bp-r'});score+=3;issues.push(`VIX HIGH at ${v.toFixed(1)} — do not buy calls`);}
     if(vix.pct<-5)positives.push('VIX falling fast — fear leaving market');
-    if(vix.pct>5)issues.push('VIX spiking — fear entering market rapidly');
+    if(vix.pct>5)issues.push('VIX spiking — fear entering market fast');
   }
   if(oil){
     const v=oil.price;
-    if(v>100){pills.push({t:`Oil $${v.toFixed(0)} !`,c:'bp-r'});score+=2;issues.push(`Oil critical at $${v.toFixed(0)} — inflation risk high, market under pressure`);}
-    else if(v>90){pills.push({t:`Oil $${v.toFixed(0)} ⚠`,c:'bp-a'});score++;issues.push(`Oil elevated at $${v.toFixed(0)} — watch CPI impact`);}
+    if(v>100){pills.push({t:`Oil $${v.toFixed(0)} !`,c:'bp-r'});score+=2;issues.push(`Oil critical at $${v.toFixed(0)} — inflation risk high`);}
+    else if(v>90){pills.push({t:`Oil $${v.toFixed(0)} ⚠`,c:'bp-a'});score++;issues.push(`Oil elevated — watch CPI impact`);}
     else{pills.push({t:`Oil $${v.toFixed(0)}`,c:'bp-g'});positives.push('Oil contained — no inflation pressure');}
   }
   if(gold){
-    const v=gold.price,cp=gold.pct;
-    if(cp>1.5){pills.push({t:`Gold +${cp.toFixed(1)}%`,c:'bp-a'});score++;issues.push('Gold rising — risk-off sentiment building');}
-    else if(cp<-1){pills.push({t:`Gold ${cp.toFixed(1)}%`,c:'bp-g'});positives.push('Gold falling — risk-on, stocks favoured');}
-    else{pills.push({t:`Gold $${v.toFixed(0)}`,c:'bp-n'});}
+    const cp=gold.pct,v=gold.price;
+    if(cp>1.5){pills.push({t:`Gold +${cp.toFixed(1)}%`,c:'bp-a'});score++;issues.push('Gold rising — risk-off building');}
+    else if(cp<-1){pills.push({t:`Gold ${cp.toFixed(1)}%`,c:'bp-g'});positives.push('Gold falling — risk-on environment');}
+    else pills.push({t:`Gold $${v.toFixed(0)}`,c:'bp-n'});
   }
   if(dxy){
     const v=dxy.price,cp=dxy.pct;
     if(v>105){pills.push({t:`DXY ${v.toFixed(1)} ⚠`,c:'bp-a'});score++;issues.push('Strong dollar — headwind for stocks');}
-    else if(cp<-0.5){pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-g'});positives.push('Dollar weakening — bullish tailwind for stocks');}
-    else{pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-n'});}
+    else if(cp<-0.5){pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-g'});positives.push('Dollar weakening — bullish tailwind');}
+    else pills.push({t:`DXY ${v.toFixed(1)}`,c:'bp-n'});
   }
-
   const b=document.getElementById('condBanner');
-  const icon=document.getElementById('condIcon');
-  const title=document.getElementById('condTitle');
-  const text=document.getElementById('condText');
-  const pe=document.getElementById('condPills');
-
-  if(score===0){
-    b.className='banner green';icon.textContent='🟢';title.textContent='Favourable conditions';
-    text.textContent=`All macro indicators supportive. ${positives.join('. ')}. Standard entry rules apply today.`;
-  }else if(score<=2){
-    b.className='banner amber';icon.textContent='🟡';title.textContent='Cautious conditions';
-    text.textContent=`Stress signals active. ${[...issues,...positives].join('. ')}. Require strong confluence before any entry.`;
-  }else if(score<=4){
-    b.className='banner red';icon.textContent='🔴';title.textContent='Unfavourable conditions';
-    text.textContent=`Multiple stress signals. ${issues.join('. ')}. Only absolute A+ setups — no marginal entries.`;
-  }else{
-    b.className='banner dark';icon.textContent='⚫';title.textContent='Risk off — extreme caution';
-    text.textContent=`Market under stress. ${issues.join('. ')}. Puts only or no trades today.`;
-  }
-  pe.innerHTML=pills.map(p=>`<div class="bpill ${p.c}">${p.t}</div>`).join('');
+  const msgs={0:['banner green','🟢','Favourable conditions',`All macro supportive. ${positives.join('. ')}. Standard entry rules apply.`],
+    2:['banner amber','🟡','Cautious conditions',`${[...issues,...positives].join('. ')}. Strong confluence required.`],
+    4:['banner red','🔴','Unfavourable conditions',`${issues.join('. ')}. A+ setups only — no marginal entries.`],
+    99:['banner dark','⚫','Risk off — extreme caution',`${issues.join('. ')}. Puts only or no trades today.`]};
+  const key=score===0?0:score<=2?2:score<=4?4:99;
+  const[cls,icon,title,text]=msgs[key];
+  b.className=cls;
+  document.getElementById('condIcon').textContent=icon;
+  document.getElementById('condTitle').textContent=title;
+  document.getElementById('condText').textContent=text;
+  document.getElementById('condPills').innerHTML=pills.map(p=>`<div class="bpill ${p.c}">${p.t}</div>`).join('');
 }
 
 async function buildTickers(){
   const grid=document.getElementById('tickerCards');
-  grid.innerHTML='<div class="lrow">Fetching prices and calculating trends...</div>';
-
-  // Fetch quotes from Finnhub (reliable) + candles from Yahoo (for EMA)
+  grid.innerHTML='<div class="lrow">Fetching prices and calculating EMAs...</div>';
   allResults=await Promise.all(TICKERS.map(async t=>{
-    const[q,yf]=await Promise.all([
-      fhQuote(t.s),
-      fetchYF(t.s),
-    ]);
-    // Use Finnhub price + Yahoo candles for EMA calculation
+    const[q,yf]=await Promise.all([fhQuote(t.s),fetchYF(t.s)]);
     const price=q?.price||yf?.price;
     const closes=yf?.closes||[];
-    const merged={
-      price,
-      change:q?.change||yf?.change||0,
-      pct:q?.pct||yf?.pct||0,
-      closes,
-      h52:yf?.h52,
-      l52:yf?.l52,
-    };
-    return{t,d:merged};
+    return{t,d:{price,change:q?.change||yf?.change||0,pct:q?.pct||yf?.pct||0,closes,h52:yf?.h52,l52:yf?.l52}};
   }));
+  renderTickerCards();
+}
 
+function renderTickerCards(){
+  const grid=document.getElementById('tickerCards');
   grid.innerHTML='';
   ['primary','stocks','watch'].forEach(grp=>{
     const items=allResults.filter(r=>r.t.g===grp);
@@ -529,53 +500,42 @@ async function buildTickers(){
     const cg=document.createElement('div');
     cg.className='cards-grid';
     items.forEach(({t,d})=>{
-      const price=d?.price,pct=d?.pct||0,closes=d?.closes||[];
-
-      // Calculate EMAs - need enough data
-      const e20=ema(closes,20);
-      const e50=ema(closes,50);
-      const e200=ema(closes,200);
+      const lq=liveQuotes[t.s];
+      const price=lq?.price||d?.price;
+      const pct=lq?.pct||d?.pct||0;
+      const change=lq?.change||d?.change||0;
+      const closes=d?.closes||[];
+      const e20=ema(closes,20),e50=ema(closes,50),e200=ema(closes,200);
       const a20=price&&e20?price>e20:null;
       const a50=price&&e50?price>e50:null;
       const a200=price&&e200?price>e200:null;
-
-      // Trends using different EMA periods as proxy for timeframes
-      const t1h=getTrend(closes,price,5);   // Short term proxy
-      const t1d=getTrend(closes,price,20);  // Daily
-      const t1w=getTrend(closes,price,50);  // Weekly
-      const t1m=getTrend(closes,price,200); // Monthly
-
+      // M→W→D→1H left to right
+      const tM=getTrend(closes,price,200); // Monthly — 200d EMA
+      const tW=getTrend(closes,price,50);  // Weekly — 50d EMA
+      const tD=getTrend(closes,price,20);  // Daily — 20d EMA
+      const t1h=getTrend(closes,price,5);  // 1H proxy — 5d EMA
       const mCls=pct>1.5?'mup':pct<-1.5?'mdown':grp==='primary'?'pri':'';
       const sl=S.levels[t.s]||{};
-
-      // EMA dot display
-      const dot=v=>v===null?`<div class="ed" style="background:var(--text4)"></div>`:
-                     `<div class="ed ${v?'on':'off'}"></div>`;
+      const dot=v=>v===null?`<div class="ed unk"></div>`:`<div class="ed ${v?'on':'off'}"></div>`;
       const emaLabel=`${e20?e20.toFixed(0):'?'} · ${e50?e50.toFixed(0):'?'} · ${e200?e200.toFixed(0):'?'}`;
-
       const card=document.createElement('div');
       card.className=`tcard ${mCls}`;
       card.innerHTML=`
         <div class="tc-top">
-          <div>
-            <div class="tc-sym">${t.s}</div>
-            <div class="tc-name">${t.n}</div>
-          </div>
-          ${badge(pct,price,d?.h52,d?.l52)}
+          <div><div class="tc-sym">${t.s}</div><div class="tc-name">${t.n}</div></div>
+          ${badge(pct,price,d?.h52)}
         </div>
         <div class="tc-price">${fp(price)}</div>
-        <div class="tc-chg">${d?fc(d.change,pct):'<span class="flat">--</span>'}</div>
+        <div class="tc-chg">${fc(change,pct)||'<span class="flat">--</span>'}</div>
         <div class="tc-ema">
-          <div class="ema-stack">
-            ${dot(a20)}${dot(a50)}${dot(a200)}
-          </div>
-          <div class="ema-vals">EMA ${emaLabel}</div>
+          <div class="ema-stack">${dot(a20)}${dot(a50)}${dot(a200)}</div>
+          <div class="ema-vals">20·50·200 EMA: ${emaLabel}</div>
         </div>
         <div class="tc-trends">
+          <div class="tcell"><div class="ttf">Month</div>${tarr(tM)}</div>
+          <div class="tcell"><div class="ttf">Week</div>${tarr(tW)}</div>
+          <div class="tcell"><div class="ttf">Day</div>${tarr(tD)}</div>
           <div class="tcell"><div class="ttf">1H</div>${tarr(t1h)}</div>
-          <div class="tcell"><div class="ttf">1D</div>${tarr(t1d)}</div>
-          <div class="tcell"><div class="ttf">1W</div>${tarr(t1w)}</div>
-          <div class="tcell"><div class="ttf">1M</div>${tarr(t1m)}</div>
         </div>
         <div class="tc-det" id="det-${t.s}">
           <div style="font-size:9px;letter-spacing:1px;color:var(--text4);text-transform:uppercase;margin-bottom:6px">Key levels</div>
@@ -589,23 +549,44 @@ async function buildTickers(){
     });
     grid.appendChild(cg);
   });
-  buildScanner();
 }
 
-function buildScanner(){
+// LIVE MOMENTUM SCANNER — updates every 30s independently
+async function updateLiveScanner(){
+  prevQuotes={...liveQuotes};
+  const quotes=await Promise.all(TICKERS.map(async t=>{
+    const q=await fhQuote(t.s);
+    if(q)liveQuotes[t.s]=q;
+    return{t,q:liveQuotes[t.s]||null};
+  }));
   const grid=document.getElementById('scanRows');
   grid.innerHTML='';
-  const sorted=[...allResults].filter(r=>r.d?.pct!=null).sort((a,b)=>Math.abs(b.d.pct)-Math.abs(a.d.pct));
-  sorted.forEach(({t,d})=>{
+  const sorted=[...quotes].filter(r=>r.q).sort((a,b)=>Math.abs(b.q.pct)-Math.abs(a.q.pct));
+  sorted.forEach(({t,q})=>{
+    const prev=prevQuotes[t.s];
+    const moving=prev&&Math.abs(q.price-prev.price)>0.05;
+    const fire=q.pct>3;
+    const crash=q.pct<-3;
     const row=document.createElement('div');
-    const mCls=d.pct>1.5?'mup':d.pct<-1.5?'mdown':'';
-    row.className=`scan-row ${mCls}`;
-    const cl=d.pct>0?'up':'down',sg=d.pct>=0?'+':'';
+    const borderCls=q.pct>1?'mup':q.pct<-1?'mdown':'';
+    const bgCls=fire?'fire':crash?'crash':'';
+    row.className=`scan-row ${borderCls} ${bgCls}`;
+    const cl=q.pct>0?'up':'down';
+    const sg=q.pct>=0?'+':'';
+    const movingArrow=moving?(q.price>(prev?.price||q.price)?'↑':'↓'):'';
+    const movingColor=movingArrow==='↑'?'var(--green)':movingArrow==='↓'?'var(--red)':'';
+    let scanBadge='';
+    if(fire)scanBadge=`<span class="scan-badge" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)">RIPPING</span>`;
+    else if(crash)scanBadge=`<span class="scan-badge" style="background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:var(--red)">FLUSHING</span>`;
     row.innerHTML=`
       <div class="scan-sym">${t.s}</div>
+      <div class="scan-price">${fp(q.price)}</div>
       <div class="scan-name">${t.n}</div>
-      <div>${badge(d.pct,d.price,d.h52,d.l52)}</div>
-      <div class="scan-pct"><span class="${cl}">${sg}${d.pct.toFixed(2)}%</span></div>`;
+      ${scanBadge}
+      <div class="scan-pct">
+        <span class="${cl}">${sg}${q.pct.toFixed(2)}%</span>
+        ${movingArrow?`<span class="scan-arrow" style="color:${movingColor}">${movingArrow}</span>`:''}
+      </div>`;
     grid.appendChild(row);
   });
 }
@@ -619,27 +600,22 @@ async function updatePatterns(){
       if(!r.ok)return;
       const d=await r.json();
       if(d?.points?.length){
-        // Get most recent patterns
-        const recent=d.points.slice(-3);
-        recent.forEach(p=>{
+        d.points.slice(-3).forEach(p=>{
           const key=(p.patternname||'').toLowerCase().replace(/[\s_-]/g,'');
-          const info=PAT_MAP[key]||{n:p.patternname||key,d:'Candlestick pattern detected',sig:'neut'};
-          all.push({sym:t.s,info,price:p.aprice,ts:p.atime});
+          const info=PAT_MAP[key]||{n:p.patternname||key,d:'Pattern detected on daily chart',sig:'neut'};
+          all.push({sym:t.s,info,price:p.aprice,ts:p.atime||0});
         });
       }
     }catch(e){}
   }));
   container.innerHTML='';
-  // Sort by most recent
-  all.sort((a,b)=>(b.ts||0)-(a.ts||0));
+  all.sort((a,b)=>b.ts-a.ts);
   const shown=all.slice(0,8);
   if(!shown.length){
-    container.innerHTML='<div class="lrow">No significant patterns detected — check back after market open</div>';
-    return;
+    container.innerHTML='<div class="lrow">No significant patterns on daily charts</div>';return;
   }
   shown.forEach(({sym,info,price})=>{
-    const row=document.createElement('div');
-    row.className='pat-row';
+    const row=document.createElement('div');row.className='pat-row';
     const sc=info.sig==='bull'?'ps-bull':info.sig==='bear'?'ps-bear':'ps-neut';
     const st=info.sig==='bull'?'Bullish':info.sig==='bear'?'Bearish':'Neutral';
     row.innerHTML=`
@@ -663,25 +639,17 @@ async function updateEarnings(){
     if(!r.ok)throw new Error();
     const d=await r.json();
     container.innerHTML='';
-    if(!d?.earningsCalendar?.length){
-      container.innerHTML='<div class="lrow">No upcoming earnings found</div>';return;
-    }
-    const relevant=d.earningsCalendar
+    const relevant=(d?.earningsCalendar||[])
       .filter(e=>EARN_WATCH.includes(e.symbol))
       .sort((a,b)=>new Date(a.date)-new Date(b.date))
       .slice(0,10);
-    if(!relevant.length){
-      container.innerHTML='<div class="lrow">No upcoming earnings for your watchlist</div>';return;
-    }
+    if(!relevant.length){container.innerHTML='<div class="lrow">No upcoming earnings for your watchlist</div>';return;}
     relevant.forEach(e=>{
-      const eDate=new Date(e.date);
-      const today=new Date();today.setHours(0,0,0,0);
-      const diff=Math.round((eDate-today)/(1000*60*60*24));
+      const diff=Math.round((new Date(e.date)-new Date().setHours(0,0,0,0))/(1000*60*60*24));
       let cls='week',bc='eb-week',bt=`${diff}d`;
       if(diff===0){cls='today';bc='eb-today';bt='Today';}
-      else if(diff<=5){cls='soon';bc='eb-soon';bt=`${diff}d`;}
-      const row=document.createElement('div');
-      row.className=`earn-row ${cls}`;
+      else if(diff<=5){cls='soon';bc='eb-soon';}
+      const row=document.createElement('div');row.className=`earn-row ${cls}`;
       const when=e.hour==='bmo'?'Pre-market':e.hour==='amc'?'After market':'';
       const est=e.epsEstimate?`EPS est: $${parseFloat(e.epsEstimate).toFixed(2)}`:'';
       row.innerHTML=`
@@ -693,14 +661,11 @@ async function updateEarnings(){
         <div class="earn-badge ${bc}">${bt}</div>`;
       container.appendChild(row);
     });
-  }catch(err){
-    container.innerHTML='<div class="lrow">Earnings data unavailable</div>';
-  }
+  }catch(err){container.innerHTML='<div class="lrow">Earnings data unavailable</div>';}
 }
 
 function toggleDet(sym){document.getElementById(`det-${sym}`).classList.toggle('open');}
 function saveLvl(sym,lvl,val){if(!S.levels[sym])S.levels[sym]={};S.levels[sym][lvl]=val;save();}
-function setBias(b){S.bias=b;document.querySelectorAll('.bbtn').forEach(el=>el.classList.remove('on'));document.querySelector(`.bbtn.${b}`).classList.add('on');save();}
 
 function buildCL(){
   const c=document.getElementById('clItems');c.innerHTML='';
@@ -720,6 +685,7 @@ function updateScore(){
   document.getElementById('scoreNum').textContent=`${p}/${CHECKS.length}`;
 }
 function resetCL(){S.checks=[];buildCL();save();}
+
 function buildJournal(){
   const c=document.getElementById('jEntries');c.innerHTML='';
   (S.journal||[]).slice().reverse().slice(0,15).forEach(e=>{
@@ -766,25 +732,23 @@ function updateClock(){
   });
 }
 
-function restore(){
-  if(S.bias){document.querySelectorAll('.bbtn').forEach(el=>el.classList.remove('on'));const b=document.querySelector(`.bbtn.${S.bias}`);if(b)b.classList.add('on');}
-  if(S.biasNote)document.getElementById('biasNote').value=S.biasNote;
-}
-document.getElementById('biasNote').addEventListener('input',function(){S.biasNote=this.value;save();});
-
 async function refreshAll(){
   const btn=document.getElementById('rfBtn');
   btn.innerHTML='<i class="ti ti-refresh spin"></i> Refreshing';btn.disabled=true;
   await Promise.all([updateMacro(),buildTickers(),updatePatterns(),updateEarnings()]);
+  await updateLiveScanner();
   document.getElementById('lastUpdate').textContent='Updated '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
   btn.innerHTML='<i class="ti ti-refresh"></i> Refresh';btn.disabled=false;
 }
 
 async function init(){
-  load();restore();buildCL();buildJournal();
+  load();buildCL();buildJournal();
   updateClock();setInterval(updateClock,1000);
   await refreshAll();
-  setInterval(refreshAll,60000);
+  // Full refresh every 90s
+  setInterval(refreshAll,90000);
+  // Live scanner updates every 30s independently
+  setInterval(updateLiveScanner,30000);
 }
 init();
 </script>
